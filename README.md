@@ -1,4 +1,4 @@
-# Experiment--03-Half-Subtractor-and-Full-subtractor
+# Experiment--04-Half-Subtractor-and-Full-subtractor
 ## Implementation-of-Half-subtractor-and-Full-subtractor-circuit
 ## AIM:
 To design a half subtractor and full subtractor circuit and verify its truth table in Quartus using Verilog programming.
@@ -35,20 +35,63 @@ Write the detailed procedure here
 ## Program:
 /*
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: Janani R
+RegisterNumber:  2122212300399
 */
+## HALF SUBTRACTOR:
+```
+module exp04(a,b,difference,borrow);
+input a,b;
+output difference,borrow;
+wire x;
+xor(difference,a,b);
+not(x,a);
+and(borrow,x,b);
+endmodule
+```
+## FULL SUBTRACTOR:
+
+```
+module FullSub04(a,b,bin,difference,borrow);
+input a,b,bin;
+output difference,borrow;
+wire p;
+assign difference=((a^b)^bin);
+not (p,a);
+assign borrow=((p&b)|(p&bin)|(b&bin));
+endmodule
+```
 
 ## Output:
 
+Half Subtractor:
+
+![image](https://github.com/Janani-2003/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/94288340/48c2cef2-e711-49bd-aa3b-1438aea930ad)
+
+Full Subtractor:
+
+![image](https://github.com/Janani-2003/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/94288340/41640ea2-b4c7-4373-b004-1bc1f158ebe6)
+
 ## Truthtable
 
+Half subtractor:
 
+![270082671-2d89af83-d022-415c-90e9-583daf67bae7](https://github.com/Janani-2003/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/94288340/1e2db12c-5864-4cc5-9071-ce0983cbf722)
 
-##  RTL realization
+Full subtractor:
 
+![270082689-f5e4b26b-f638-41b1-b22e-983f454d4bba](https://github.com/Janani-2003/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/94288340/32b0915e-a3bf-4af1-bd6c-0a954b754dd1)
 
-## Timing diagram 
+## output waveform
+
+Half subtractor:
+
+![270082712-7bea6682-50df-42d8-81c5-9018b01d2398](https://github.com/Janani-2003/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/94288340/a4052fca-6b36-456d-8c74-96df5549710b)
+
+Full subtractor:
+
+![270082721-f6ce84c1-cb34-412b-a60c-f61f1792db28](https://github.com/Janani-2003/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/94288340/f5097db4-fe77-4f44-a35f-335d6eb9bdcb)
+
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
